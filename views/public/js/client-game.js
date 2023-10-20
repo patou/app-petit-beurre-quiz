@@ -33,8 +33,8 @@ const componentsBeurre = [];
 /**
  * Couleur
  */
-const farineColor = '#E0C800';
-const beurreColor = '#C71000';
+const farineColor = '#f0e9d9';
+const beurreColor = '#FFF48D';
 
 /**
  * Sons

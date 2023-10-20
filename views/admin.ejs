@@ -7,6 +7,7 @@
   <!-- Permet de ne pas faire de zoom 
     Lorsque l'admin est sur mobile et qu'il click sur un bouton plusieurs fois-->
   <meta name='viewport' content='user-scalable=0' />
+  <link href="./css/admin.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,7 +27,7 @@
           <input id="button-remove-point-beurre" type="button" class="base-button button-beurre" value="-" />
         </div>
         <div class="col-lg-4 col-sm-4 text-center">
-          <input id="button-buzz-bad-response" type="button" class="base-button button-beurre" value="X" />
+          <input id="button-buzz-bad-response" type="button" class="base-button button-bad" value="X" />
         </div>
         <div class="col-lg-4 col-sm-6 text-center">
           <input id="button-add-point-farine" type="button" class="base-button button-farine" value="+" />
@@ -34,14 +35,14 @@
         </div>
       </div>
       <div class="row justify-content-center mt-4">
-        <input class="btn btn-success btn-lg mr-2" type="button" value="Transition Suivante" id="button-next-transition" />
+        <input class="btn btn-success button-action btn-lg mr-2" type="button" value="Transition Suivante" id="button-next-transition" />
       </div>
       <div class="row justify-content-center mt-4">
-        <input class="btn btn-success btn-lg mr-2" type="button" value="Débloquer buzzer" id="button-unlock-buzz" />
-        <input class="btn btn-secondary btn-lg" type="button" value="Bloquer buzzer" id="button-lock-buzz" />
+        <input class="btn btn-success button-action btn-lg mr-2" type="button" value="Débloquer buzzer" id="button-unlock-buzz" />
+        <input class="btn btn-secondary btn-lg button-bad" type="button" value="Bloquer buzzer" id="button-lock-buzz" />
       </div>
       <div class="row justify-content-center mt-4">
-        <input class="btn btn-success btn-lg" type="button" value="Recharger partie" data-toggle="modal" data-target="#modal-reload-part" />
+        <input class="btn btn-success button-action btn-lg" type="button" value="Recharger partie" data-toggle="modal" data-target="#modal-reload-part" />
       </div>
     </div>
   </div>

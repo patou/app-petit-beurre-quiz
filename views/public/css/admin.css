@@ -1,0 +1,34 @@
+.jumbotron {
+    background-color: black;
+    & h1 {
+        color: white;
+    }
+}
+
+.button-bad {
+    background-color: #ED1C24;
+    border-color: #bd0f15;
+}
+
+.button-bad:hover {
+    background-color: #bd0f15;
+    border-color: #bd0f15;
+}
+
+.button-action {
+    background-color: #494A9F;
+    border-color: #303169;
+}
+
+.button-action:hover {
+    background-color: #303169;
+    border-color: #303169;
+}
+
+.button-farine:hover {
+    background-color: #a48641;
+}
+
+.button-farine:hover {
+    background-color: #a48641;
+}

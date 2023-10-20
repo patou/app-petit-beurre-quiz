@@ -51,13 +51,15 @@ body {
 }
 
 .point-beurre {
-    background: #C71000;
+    background: #FFF48D;
+    color: #5c4500;
     width: 140px;
     height: 140px;
 }
 
 .point-farine {
-    background: #E0C800;
+    background: #f0e9d9;
+    color: #343a40;
     width: 140px;
     height: 140px;
 }
@@ -65,7 +67,6 @@ body {
 .point-farine,
 .point-beurre>p {
     font-size: 112px;
-    color: white;
     font-family: 'Cabin Sketch', cursive;
 }
 
@@ -86,17 +87,25 @@ body {
 }
 
 .button-beurre {
-    background: #C71000;
+    background: #FFF48D;
+    color: #5c4500;
 }
 .button-beurre:active {
-    background: #AE0E00;
+    background: #dfc907;
+}
+.button-beurre:hover {
+    background: #dfc907;
 }
 
 .button-farine {
-    background: #E0C800;
+    background: #f0e9d9;
+    color: #343a40;
 }
 .button-farine:active {
-    background: #C7B100;
+    background: #a48641;
+}
+.button-farine:hover {
+    background: #a48641;
 }
 
 .test-container {
@@ -104,11 +113,11 @@ body {
 }
 
 .farine-color {
-    background: #E0C800;
+    background: #f0e9d9;
 }
 
 .beurre-color {
-    background: #C71000;
+    background: #FFF48D;
 }
 
 /**************************/
