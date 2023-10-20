@@ -2,7 +2,7 @@ const colors = require('colors');
 const figlet = require('figlet');
 const networkUtils = require('../utils/network');
 
-const burgerQuizLabel = 'App Burger Quiz';
+const burgerQuizLabel = 'Ptit Beurre Quiz';
 const anyIpAddressMessage = `> Application accessible aux adresses suivantes :`;
 const singleIpAddressMessage = `> Application accessible à l'adresse suivante :`;
 
