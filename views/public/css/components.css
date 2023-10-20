@@ -153,25 +153,25 @@
     height: 50px;
 }
 
-.mayo {
+.farine {
     background: #E0C800;
     height: 100px;
     width: 20px;
 }
 
-.ketchup {
+.beurre {
     background: #C71000;
     height: 100px;
     width: 20px;
 }
 
-.empty-mayo {
+.empty-farine {
     border: 2px white dotted;
     height: 100px;
     width: 20px;
 }
 
-.empty-ketchup {
+.empty-beurre {
     border: 2px white dotted;
     height: 100px;
     width: 20px;
@@ -433,8 +433,8 @@
     margin-top: 15px;
 }
 
-.empty-mayo-img {
-    background: url('../images/burger/empty-mayo-ketchup.png') no-repeat;
+.empty-farine-img {
+    background: url('../images/burger/empty-farine-beurre.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
@@ -442,8 +442,8 @@
     margin-top: 25px; 
 }
 
-.empty-ketchup-img {
-    background: url('../images/burger/empty-mayo-ketchup.png') no-repeat;
+.empty-beurre-img {
+    background: url('../images/burger/empty-farine-beurre.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
@@ -451,8 +451,8 @@
     margin-top: 25px;     
 }
 
-.mayo-img {
-    background: url('../images/burger/tube-mayo.png') no-repeat;
+.farine-img {
+    background: url('../images/burger/tube-farine.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
@@ -460,8 +460,8 @@
     margin-top: 25px; 
 }
 
-.ketchup-img {
-    background: url('../images/burger/tube-ketchup.png') no-repeat;
+.beurre-img {
+    background: url('../images/burger/tube-beurre.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 

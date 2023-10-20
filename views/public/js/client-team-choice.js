@@ -1,15 +1,15 @@
-$buttonMayo = $('#buzz-button-mayo');
-$buttonKetchup = $('#buzz-button-ketchup');
+$buttonFarine = $('#buzz-button-farine');
+$buttonBeurre = $('#buzz-button-beurre');
 
 // La base de l'url de redirection
 const baseRedirectUrl = '/buzzer';
 
 const initEvents = function () {
-    $buttonMayo.click(function () {
-        location.href = baseRedirectUrl + '?team=team-mayo';
+    $buttonFarine.click(function () {
+        location.href = baseRedirectUrl + '?team=team-farine';
     });
-    $buttonKetchup.click(function () {
-        location.href = baseRedirectUrl + '?team=team-ketchup';
+    $buttonBeurre.click(function () {
+        location.href = baseRedirectUrl + '?team=team-beurre';
     });
 }
 

@@ -1,7 +1,7 @@
-$pointKetchupDecade = $('#point-ketchup-decade');
-$pointKetchupUnit = $('#point-ketchup-unit');
-$pointMayoDecade = $('#point-mayo-decade');
-$pointMayoUnit = $('#point-mayo-unit');
+$pointBeurreDecade = $('#point-beurre-decade');
+$pointBeurreUnit = $('#point-beurre-unit');
+$pointFarineDecade = $('#point-farine-decade');
+$pointFarineUnit = $('#point-farine-unit');
 
 $modalBuzz = $('#modal-buzz');
 $mainBackground = $('#game-background');
@@ -10,8 +10,8 @@ $modalTransition = $('#modal-transition');
 $sourceTransition = $('#source-transition');
 $videoTransitionContainer = $('#video-transition-container');
 
-$modalTeamMayo = $('#modal-buzz-first-mayo');
-$modalTeamKetchup = $('#modal-buzz-first-ketchup');
+$modalTeamFarine = $('#modal-buzz-first-farine');
+$modalTeamBeurre = $('#modal-buzz-first-beurre');
 
 var socket = null;
 /**
@@ -25,16 +25,16 @@ var teamFirstBuzz = null;
  */
 let isTransitionRunning = false;
 
-const mayo = 'team-mayo'
-const ketchup = 'team-ketchup';
-const componentsMayo = [];
-const componentsKetchup = [];
+const farine = 'team-farine'
+const beurre = 'team-beurre';
+const componentsFarine = [];
+const componentsBeurre = [];
 
 /**
  * Couleur
  */
-const mayoColor = '#E0C800';
-const ketchupColor = '#C71000';
+const farineColor = '#E0C800';
+const beurreColor = '#C71000';
 
 /**
  * Sons
@@ -61,8 +61,8 @@ const durationHiddenModalBuzzFirst = 4000;
 /**
  * Les messages que reçoit le client
  */
-const messageClientMayo = 'point-mayo';
-const messageClientKetchup = 'point-ketchup';
+const messageClientFarine = 'point-farine';
+const messageClientBeurre = 'point-beurre';
 const messageToClientReloadPart = 'reload-part';
 const messageToClientReceivePoints = 'receive-points-teams';
 const messageToClientReceiveBuzz = 'receive-buzz';
@@ -84,27 +84,27 @@ var attributePointsAtTeam = function (team, points) {
     if (points > 9) {
         digitis = convertPointsAsIndividualDigits(points);
     }
-    if (team === ketchup) {
+    if (team === beurre) {
         if (digitis) {
-            $pointKetchupDecade.text(digitis[0]);
-            $pointKetchupUnit.text(digitis[1]);
+            $pointBeurreDecade.text(digitis[0]);
+            $pointBeurreUnit.text(digitis[1]);
         } else {
-            $pointKetchupDecade.text(0);
-            $pointKetchupUnit.text(points);
+            $pointBeurreDecade.text(0);
+            $pointBeurreUnit.text(points);
         }
-    } else if (team === mayo) {
+    } else if (team === farine) {
         if (digitis) {
-            $pointMayoDecade.text(digitis[0]);
-            $pointMayoUnit.text(digitis[1]);
+            $pointFarineDecade.text(digitis[0]);
+            $pointFarineUnit.text(digitis[1]);
         } else {
-            $pointMayoDecade.text(0);
-            $pointMayoUnit.text(points);
+            $pointFarineDecade.text(0);
+            $pointFarineUnit.text(points);
         }
     } else {
         alert("Impossible d'assigner un point car aucune équipe n'est déterminé");
     }
     // Récupère la collection de composant pour une équipe
-    var collection = team === mayo ? componentsMayo : componentsKetchup;
+    var collection = team === farine ? componentsFarine : componentsBeurre;
     // Changement de l'aspect visuel
     changeStateBackground(collection, points);
 }
@@ -157,10 +157,10 @@ var convertPointsAsIndividualDigits = function (points) {
  * Se charge d'alimenter les difféntes collections
  */
 const registerComponents = function () {
-    // Enregistrement des composants mayo
-    populateCollectionComponents(componentsMayo, mayo);
-    // Enregistement des composants ketchup
-    populateCollectionComponents(componentsKetchup, ketchup);
+    // Enregistrement des composants farine
+    populateCollectionComponents(componentsFarine, farine);
+    // Enregistement des composants beurre
+    populateCollectionComponents(componentsBeurre, beurre);
 }
 
 /**
@@ -189,11 +189,11 @@ const receiveBuzzAndInteractOnView = function (teamName) {
         return;
     let color = null;
     let sound = null;
-    if (teamName === ketchup) {
-        color = ketchupColor;
+    if (teamName === beurre) {
+        color = beurreColor;
         sound = buzzSoundAie;
-    } else if (teamName === mayo) {
-        color = mayoColor;
+    } else if (teamName === farine) {
+        color = farineColor;
         sound = buzzSoundOutch;
     } else {
         console.log('Impossible de faire le buzz car valeur indéterminée : ' + teamName)
@@ -223,7 +223,7 @@ const pinupTeamBuzzFirstOnView = function (teamName) {
         return;
     teamFirstBuzz = teamName;
     // Récupére la modal à afficher par rapport à l'équipe
-    let modal = teamName === mayo ? $modalTeamMayo : $modalTeamKetchup;
+    let modal = teamName === farine ? $modalTeamFarine : $modalTeamBeurre;
     modal.show();
     // On fait disparaitre la modal au bout
     // D'une certaine durée
@@ -324,31 +324,31 @@ const initQrCode = function () {
 const initSocketAndListenEvents = function () {
     socket = io();
     /**
-     * Points pour l'équipe mayo
+     * Points pour l'équipe farine
      */
-    socket.on(messageClientMayo, function (points) {
-        attributePointsAtTeam(mayo, points);
+    socket.on(messageClientFarine, function (points) {
+        attributePointsAtTeam(farine, points);
     });
     /**
-     * Points pour l'équipe ketchup
+     * Points pour l'équipe beurre
      */
-    socket.on(messageClientKetchup, function (points) {
-        attributePointsAtTeam(ketchup, points);
+    socket.on(messageClientBeurre, function (points) {
+        attributePointsAtTeam(beurre, points);
     });
     /**
      * Rechargement de la partie
      */
     socket.on(messageToClientReloadPart, function () {
-        attributePointsAtTeam(mayo, 0);
-        attributePointsAtTeam(ketchup, 0);
+        attributePointsAtTeam(farine, 0);
+        attributePointsAtTeam(beurre, 0);
         stopTransitionNow();
     });
     /**
      * Reception des points des différents équipes
      */
-    socket.on(messageToClientReceivePoints, function (pointsMayo, pointsKetchup) {
-        attributePointsAtTeam(mayo, pointsMayo);
-        attributePointsAtTeam(ketchup, pointsKetchup);
+    socket.on(messageToClientReceivePoints, function (pointsFarine, pointsBeurre) {
+        attributePointsAtTeam(farine, pointsFarine);
+        attributePointsAtTeam(beurre, pointsBeurre);
     });
     /**
      * Réception de l'évènement du buzzer

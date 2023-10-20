@@ -3,18 +3,18 @@ var socket = io();
 
 const messageAdd = 'add'
 const messageRemove = 'remove';
-const messageMayoTeam = 'event-point-mayo';
-const messageKetchupTeam = 'event-point-ketchup';
+const messageFarineTeam = 'event-point-farine';
+const messageBeurreTeam = 'event-point-beurre';
 const messageReloadPart = 'event-reload-part';
 const messageLockBuzz= 'event-lock-buzz';
 const messageUnLockBuzz= 'event-unlock-buzz';
 const messageNextTransition= 'event-next-transition';
 const messageBuzzBadResponse = 'event-bad-response';
 
-$buttonAddPointMayo = $('#button-add-point-mayo');
-$buttonRemovePointMayo = $('#button-remove-point-mayo');
-$buttonAddPointKetchup = $('#button-add-point-ketchup');
-$buttonRemovePointKetchup = $('#button-remove-point-ketchup');
+$buttonAddPointFarine = $('#button-add-point-farine');
+$buttonRemovePointFarine = $('#button-remove-point-farine');
+$buttonAddPointBeurre = $('#button-add-point-beurre');
+$buttonRemovePointBeurre = $('#button-remove-point-beurre');
 $buttonBuzzBadResponse = $('#button-buzz-bad-response');
 
 $buttonLockBuzzer = $('#button-lock-buzz');
@@ -26,17 +26,17 @@ $buttonNextTransition = $('#button-next-transition');
 $modalReloadPartWarn = $('#modal-reload-part');
 
 var initEvents = function () {
-    $buttonAddPointMayo.click(function () {
-        socket.emit(messageMayoTeam, messageAdd);
+    $buttonAddPointFarine.click(function () {
+        socket.emit(messageFarineTeam, messageAdd);
     });
-    $buttonRemovePointMayo.click(function () {
-        socket.emit(messageMayoTeam, messageRemove);
+    $buttonRemovePointFarine.click(function () {
+        socket.emit(messageFarineTeam, messageRemove);
     });
-    $buttonAddPointKetchup.click(function () {
-        socket.emit(messageKetchupTeam, messageAdd);
+    $buttonAddPointBeurre.click(function () {
+        socket.emit(messageBeurreTeam, messageAdd);
     });
-    $buttonRemovePointKetchup.click(function () {
-        socket.emit(messageKetchupTeam, messageRemove);
+    $buttonRemovePointBeurre.click(function () {
+        socket.emit(messageBeurreTeam, messageRemove);
     });
     $buttonReloadPart.click(function () {
         socket.emit(messageReloadPart);

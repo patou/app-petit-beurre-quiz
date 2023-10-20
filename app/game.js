@@ -7,8 +7,8 @@ module.exports = function (io) {
 
     var transitionsList = [];
 
-    const teamMayo = new Team('mayo');
-    const teamKetchup = new Team('ketchup');
+    const teamFarine = new Team('farine');
+    const teamBeurre = new Team('beurre');
     /**
      * Etat du buzzer
      */
@@ -27,22 +27,22 @@ module.exports = function (io) {
              *  On emet dès que le client se connecte et demande l'info des points
              */
             socket.on(messages.messageClientsNeedPointsInformations, function () {
-                io.emit(messages.messageToClientReceivePoints, teamMayo.points, teamKetchup.points);
+                io.emit(messages.messageToClientReceivePoints, teamFarine.points, teamBeurre.points);
             });
             socket.on(messages.messageClientNeedStateBuzzer, function () {
                 io.emit(messages.messageToClientReceiveStateBuzzer, buzzerIsLock);
             });
             /**
-             *  Manage les points de la team mayo
+             *  Manage les points de la team farine
              */
-            socket.on(messages.messageMayoTeam, function (message) {
-                receiveOrderModifyPoints(message, messages.messageToClientMayo, teamMayo);
+            socket.on(messages.messageFarineTeam, function (message) {
+                receiveOrderModifyPoints(message, messages.messageToClientFarine, teamFarine);
             });
             /**
-             *  Manage les points de la team ketchup
+             *  Manage les points de la team beurre
              */
-            socket.on(messages.messageKetchupTeam, function (message) {
-                receiveOrderModifyPoints(message, messages.messageToClientKetchup, teamKetchup);
+            socket.on(messages.messageBeurreTeam, function (message) {
+                receiveOrderModifyPoints(message, messages.messageToClientBeurre, teamBeurre);
             });
             /**
              * Se charge de bloquer les buzzers 
@@ -63,8 +63,8 @@ module.exports = function (io) {
              */
             socket.on(messages.messageReloadPart, function () {
                 buzzerIsLock = true;
-                teamMayo.points = 0;
-                teamKetchup.points = 0;
+                teamFarine.points = 0;
+                teamBeurre.points = 0;
                 initTransitionList();
                 io.emit(messages.messageToClientReloadPart);
                 io.emit(messages.messageToClientReceiveStateBuzzer, buzzerIsLock);

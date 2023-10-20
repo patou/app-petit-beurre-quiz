@@ -10,8 +10,8 @@ module.exports = Object.freeze({
      */
     messageAdd: 'add',
     messageReloadPart: 'event-reload-part',
-    messageMayoTeam: 'event-point-mayo',
-    messageKetchupTeam: 'event-point-ketchup',
+    messageFarineTeam: 'event-point-farine',
+    messageBeurreTeam: 'event-point-beurre',
     messageLockBuzz: 'event-lock-buzz',
     messageUnLockBuzz: 'event-unlock-buzz',
     messageNextTransition: 'event-next-transition',
@@ -26,8 +26,8 @@ module.exports = Object.freeze({
      * Les messages à envoyer aux clients
      */
     messageToClientReloadPart: 'reload-part',
-    messageToClientMayo: 'point-mayo',
-    messageToClientKetchup: 'point-ketchup',
+    messageToClientFarine: 'point-farine',
+    messageToClientBeurre: 'point-beurre',
     messageToClientReceivePoints: 'receive-points-teams',
     messageToClientReceiveBuzz: 'receive-buzz',
     messageToClientLockBuzz: 'receive-lock-buzz',
