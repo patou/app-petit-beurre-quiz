@@ -32,3 +32,10 @@
 .button-farine:hover {
     background-color: var(--couleur-farine-hover);
 }
+
+.display-point {
+    width: 150px;
+    text-align: center;
+    font-size: 112px;
+    font-family: 'Cabin Sketch', cursive;
+}

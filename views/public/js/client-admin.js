@@ -10,6 +10,13 @@ const messageLockBuzz= 'event-lock-buzz';
 const messageUnLockBuzz= 'event-unlock-buzz';
 const messageNextTransition= 'event-next-transition';
 const messageBuzzBadResponse = 'event-bad-response';
+const messageClientFarine = 'point-farine';
+const messageClientBeurre = 'point-beurre';
+const messageToClientReloadPart = 'reload-part';
+const messageToClientReceivePoints = 'receive-points-teams';
+const messageClientsNeedPointsInformations = 'need-information-points';
+const farine = 'team-farine'
+const beurre = 'team-beurre';
 
 $buttonAddPointFarine = $('#button-add-point-farine');
 $buttonRemovePointFarine = $('#button-remove-point-farine');
@@ -24,6 +31,9 @@ $buttonReloadPart = $('#button-reload-part');
 $buttonNextTransition = $('#button-next-transition');
 
 $modalReloadPartWarn = $('#modal-reload-part');
+
+$displayPointFarine = $('#display-point-farine');
+$displayPointBeurre = $('#display-point-beurre');
 
 var initEvents = function () {
     $buttonAddPointFarine.click(function () {
@@ -54,6 +64,36 @@ var initEvents = function () {
     $buttonBuzzBadResponse.click(function() {
         socket.emit(messageBuzzBadResponse);
     })
+
+    /**
+     * Points pour l'équipe farine
+     */
+    socket.on(messageClientFarine, function (points) {
+        $displayPointFarine.val(points);
+    });
+    /**
+     * Points pour l'équipe beurre
+     */
+    socket.on(messageClientBeurre, function (points) {
+        $displayPointBeurre.val(points);
+    });
+
+     /**
+     * Reception des points des différents équipes
+     */
+    socket.on(messageToClientReceivePoints, function (pointsFarine, pointsBeurre) {
+        $displayPointFarine.val(pointsFarine);
+        $displayPointBeurre.val(pointsBeurre);
+    });
+    socket.on(messageToClientReloadPart, function () {
+        $displayPointFarine.val(0);
+        $displayPointBeurre.val(0);
+    });
+    /**
+     * On souhaite connaitre le nombre de points
+     * Dès que l'on se connecte sur la page
+     */
+    socket.emit(messageClientsNeedPointsInformations);
 }
 
 initEvents();
