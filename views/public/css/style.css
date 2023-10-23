@@ -56,6 +56,11 @@ body {
     height: 150px;
 }
 
+.team-choice-button {
+    width: 100%;
+    cursor: pointer;
+}
+
 .point-beurre {
     background: var(--couleur-beurre);
     color: var(--couleur-beurre-text);
