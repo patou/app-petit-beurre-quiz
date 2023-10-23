@@ -29,12 +29,12 @@
 }
 
 .qr-code-container .title-beurre {
-    color: #FFF48D;
+    color: var(--couleur-beurre);
     margin-right: 15px;
 }
 
 .qr-code-container .title-farine {
-    color: #f0e9d9;
+    color: var(--couleur-farine);
     margin-right: 15px;
 }
 

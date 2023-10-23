@@ -3,7 +3,13 @@ body {
     height: 100%;
     overflow: hidden;
     background: black !important;
-    overflow-y: auto;	
+    overflow-y: auto;
+    --couleur-beurre: #FFF48D;
+    --couleur-farine: #f0e9d9;
+    --couleur-beurre-hover: #dfc907;
+    --couleur-farine-hover: #a48641;
+    --couleur-beurre-text: #5c4500;
+    --couleur-farine-text: #343a40;
 }
 
 #modal-buzz {
@@ -51,15 +57,15 @@ body {
 }
 
 .point-beurre {
-    background: #FFF48D;
-    color: #5c4500;
+    background: var(--couleur-beurre);
+    color: var(--couleur-beurre-text);
     width: 140px;
     height: 140px;
 }
 
 .point-farine {
-    background: #f0e9d9;
-    color: #343a40;
+    background: var(--couleur-farine);
+    color: var(--couleur-farine-text);
     width: 140px;
     height: 140px;
 }
@@ -87,25 +93,19 @@ body {
 }
 
 .button-beurre {
-    background: #FFF48D;
-    color: #5c4500;
+    background: var(--couleur-beurre);
+    color: var(--couleur-beurre-text);
 }
-.button-beurre:active {
-    background: #dfc907;
-}
-.button-beurre:hover {
-    background: #dfc907;
+.button-beurre:active, .button-beurre:hover {
+    background: var(--couleur-beurre-hover);
 }
 
 .button-farine {
-    background: #f0e9d9;
-    color: #343a40;
+    background: var(--couleur-farine);
+    color: var(--couleur-farine-text);
 }
-.button-farine:active {
-    background: #a48641;
-}
-.button-farine:hover {
-    background: #a48641;
+.button-farine:active, .button-farine:hover {
+    background: var(--couleur-farine-hover);
 }
 
 .test-container {
@@ -113,11 +113,11 @@ body {
 }
 
 .farine-color {
-    background: #f0e9d9;
+    background: var(--couleur-farine);
 }
 
 .beurre-color {
-    background: #FFF48D;
+    background: var(--couleur-beurre);
 }
 
 /**************************/

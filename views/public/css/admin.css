@@ -25,10 +25,10 @@
     border-color: #303169;
 }
 
-.button-farine:hover {
-    background-color: #a48641;
+.button-beurre:hover {
+    background-color: var(--couleur-beurre-hover);
 }
 
 .button-farine:hover {
-    background-color: #a48641;
+    background-color: var(--couleur-farine-hover);
 }
