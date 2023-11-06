@@ -434,7 +434,7 @@
 }
 
 .empty-farine-img {
-    background: url('../images/burger/empty-farine-beurre.png') no-repeat;
+    background: url('../images/burger/empty-farine.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
@@ -443,7 +443,7 @@
 }
 
 .empty-beurre-img {
-    background: url('../images/burger/empty-farine-beurre.png') no-repeat;
+    background: url('../images/burger/empty-beurre.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
