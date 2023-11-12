@@ -61,24 +61,37 @@ body {
     cursor: pointer;
 }
 
+.point-beurre,
+.point-farine {
+    width: 116px;
+    height: 179px;
+    background-image: url(../images/burger/tube-beurre.png);
+    background-repeat: no-repeat;
+    padding-top: 26px;
+}
+
 .point-beurre {
-    background: var(--couleur-beurre);
-    color: var(--couleur-beurre-text);
-    width: 140px;
-    height: 140px;
+    color: var(--couleur-beurre);
+    text-shadow: 0 0 28px var(--couleur-beurre-text);
 }
 
 .point-farine {
-    background: var(--couleur-farine);
-    color: var(--couleur-farine-text);
-    width: 140px;
-    height: 140px;
+    color: var(--couleur-farine);
+    text-shadow: 0 0 28px var(--couleur-farine-text);
 }
 
 .point-farine,
 .point-beurre>p {
     font-size: 112px;
     font-family: 'Cabin Sketch', cursive;
+}
+
+.logo-teams {
+    width: 300px;
+}
+
+.row.point-section {
+    padding-left: 45px;
 }
 
 .base-button {

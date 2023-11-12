@@ -418,23 +418,23 @@
 }
 
 .empty-salt-pepper-img {
-    background: url('../images/burger/empty-salt-pepper.png') no-repeat;
+    background: url('../images/burger/empty-tube-beurre.png') no-repeat;
     background-size:contain;
     width: 180px;
-    height: 60px; 
+    height: 180px; 
     margin-top: 15px;
 }
 
 .salt-pepper-img {
-    background: url('../images/burger/salt-pepper.png') no-repeat;
+    background: url('../images/burger/tube-beurre.png') no-repeat;
     background-size:contain;
     width: 180px;
-    height: 60px;     
+    height: 180px;     
     margin-top: 15px;
 }
 
 .empty-farine-img {
-    background: url('../images/burger/empty-farine.png') no-repeat;
+    background: url('../images/burger/empty-salt-pepper.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
@@ -443,7 +443,7 @@
 }
 
 .empty-beurre-img {
-    background: url('../images/burger/empty-beurre.png') no-repeat;
+    background: url('../images/burger/empty-salt-pepper.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
@@ -452,7 +452,7 @@
 }
 
 .farine-img {
-    background: url('../images/burger/tube-farine.png') no-repeat;
+    background: url('../images/burger/salt-pepper.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
@@ -461,7 +461,7 @@
 }
 
 .beurre-img {
-    background: url('../images/burger/tube-beurre.png') no-repeat;
+    background: url('../images/burger/salt-pepper.png') no-repeat;
     background-size:contain;
     width: 200px;
     height: 100px; 
